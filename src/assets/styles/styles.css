@@ -1,0 +1,131 @@
+/*
+PAlETA DE COLORES
+#012619
+#4EA664
+#78BF9E
+#A9D9C2
+#F2E6D8
+#E8E5DE
+*/
+
+body {
+  margin: 0;
+  min-height: 100vh;
+}
+
+* {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* 1vw o 1em */
+p {
+  font-size: 1em;
+}
+
+h1 {
+  text-align: center;
+}
+
+.Header {
+  background-color: #78bf9e;
+  text-align: center;
+}
+
+.headerElement {
+  margin: 0px;
+  padding: 5px;
+}
+
+.NavBar {
+  background-color: #78bf9e;
+  display: block;
+  text-align: center;
+  overflow-y: hidden;
+  overflow-x: auto;
+  padding: 5px;
+}
+
+.navbarElement {
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 10px;
+  margin-right: 5px;
+  display: inline-block;
+}
+
+.cardMainContainer {
+  text-align: center;
+}
+
+.Card {
+  background-color: #012619;
+  padding: 5px;
+  margin: 20px;
+  /*scroll-snap-align: start;*/
+}
+
+.carrouselCards {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 1em;
+  overflow-x: auto;
+  flex-grow: 1;
+  flex-shrink: 1;
+  /*scroll-snap-type: x mandatory;*/
+}
+
+img {
+  /*object-fit: cover*/
+}
+
+.carrouselCards::-webkit-scrollbar {
+}
+
+.cardElement {
+}
+
+.infoContent {
+  text-align: center;
+  align-items: center;
+  height: auto;
+  display: block;
+  overflow: auto;
+}
+
+.infoElement {
+  padding: 10px;
+  margin: 10px;
+}
+
+img.infoElement {
+  margin: 15px 10px;
+  /*border: 2px solid black;*/
+  transition: transform 0.2s ease-in-out;
+}
+
+img.infoElement:hover {
+  transform: scale(1.05);
+}
+
+.Footer {
+  background-image: linear-gradient(to bottom, #78bf9e, #4ea664);
+  text-align: center;
+}
+
+.footerContent {
+  padding: 5px;
+}
+
+.footerElement {
+  color: black;
+  display: inline;
+  margin: 5px;
+  padding: 5px;
+}
+
+p.footerElement {
+  display: block;
+  font-weight: 500;
+}
