@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import "../assets/styles/styles.css";
+import "../../assets/styles/styles.css"
 
 // Style function for active links
 const navLinkStyles = ({ isActive }) => ({

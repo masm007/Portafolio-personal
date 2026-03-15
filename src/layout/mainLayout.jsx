@@ -3,10 +3,9 @@ import { useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
 
 // Componentes
-import { Footer } from "../components/footer.jsx";
-import { Navbar } from "../components/navbar.jsx";
-import { Header } from "../components/header.jsx";
-import { Aside } from "../components/aside.jsx";
+import { Footer } from "../components/organisms/footer.jsx";
+import { Navbar } from "../components/organisms/navbar.jsx";
+import { Header } from "../components/organisms/header.jsx";
 
 export const MainLayout = () => {
   const [headerTitle, setHeaderTitle] = useState("Portafolio");

@@ -4,14 +4,14 @@ import CardContent from "@mui/material/CardContent";
 import { CardActions, CardHeader, CardMedia, Tooltip } from "@mui/material";
 import Avatar from "@mui/material/Avatar";
 import IconButton from "@mui/material/IconButton";
-import front from "../assets/frontend.png";
-import back from "../assets/backend.png";
-import full from "../assets/Fullstack.png";
-import desktop from "../assets/Desktop.png";
-import defo from "../assets/default.jpg";
+import front from "../../assets/images/frontend.png";
+import back from "../../assets/images/backend.png";
+import full from "../../assets/images/Fullstack.png";
+import desktop from "../../assets/images/Desktop.png";
+import defo from "../../assets/images/default.jpg";
 import Typography from "@mui/material/Typography";
 import { GitHub } from "@mui/icons-material";
-import "../assets/styles/styles.css";
+import "../../assets/styles/styles.css";
 
 export const Carta = ({ proyecto }) => {
   const clasificarImg = (name = "") => {

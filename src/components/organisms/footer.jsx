@@ -1,6 +1,7 @@
 import React from "react";
 import IconButton from "@mui/material/IconButton";
 import { LinkedIn, GitHub, Email, WhatsApp, Phone } from "@mui/icons-material";
+import "../../assets/styles/styles.css"
 
 export const Footer = () => {
   return (

@@ -3,8 +3,8 @@ import { useEffect } from "react";
 import { ContactPage } from "@mui/icons-material";
 import { Button } from "@mui/material";
 import { useOutletContext } from "react-router-dom";
-import { LanguageChip } from "../algo/languageChip.jsx";
-import { LanguageBarChart } from "../algo/languageBarChart.jsx";
+import { LanguageChip } from "../features/profile/languageChip.jsx";
+import { LanguageBarChart } from "../features/profile/languageBarChart.jsx";
 import { Card, CardContent, CardMedia } from "@mui/material";
 
 export const Information = () => {
@@ -19,7 +19,7 @@ export const Information = () => {
   }, [languages]);
 
   return (
-    <div className="infoContent">
+    <div className="infoContent" style={{overflowX: "auto"}}>
       <Card
         className="infoElement"
         sx={{

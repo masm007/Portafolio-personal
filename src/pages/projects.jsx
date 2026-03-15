@@ -1,6 +1,6 @@
 import React from "react";
 import { useOutletContext } from "react-router-dom";
-import { Carta } from "../algo/card.jsx";
+import { Carta } from "../features/projects/card.jsx";
 
 export const Projects = () => {
   const { proyectos } = useOutletContext();
