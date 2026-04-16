@@ -6,6 +6,7 @@ import { useOutletContext } from "react-router-dom";
 import { LanguageChip } from "../features/profile/languageChip.jsx";
 import { LanguageBarChart } from "../features/profile/languageBarChart.jsx";
 import { Card, CardContent, CardMedia } from "@mui/material";
+import fotoCv from "../assets/images/fotoCv.png";
 
 export const Information = () => {
   const { proyectos } = useOutletContext();
@@ -31,7 +32,8 @@ export const Information = () => {
       >
         <CardMedia
           component="img"
-          image={proyectos[0]?.owner.avatar_url}
+          //image={proyectos[0]?.owner.avatar_url}
+          image={fotoCv}
           sx={{ width: 200, height: 200, margin: "auto", borderRadius: "50%" }}
         />
         <CardContent>

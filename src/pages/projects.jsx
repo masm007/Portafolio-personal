@@ -1,6 +1,7 @@
 import React from "react";
 import { useOutletContext } from "react-router-dom";
 import { Carta } from "../features/projects/card.jsx";
+import Box from "@mui/material/Box";
 
 export const Projects = () => {
   const { proyectos } = useOutletContext();
@@ -22,14 +23,30 @@ export const Projects = () => {
       //<Carta proyecto={p} key={p.id} />
       //</div>
     ));
+
+  const caja = (projectType) => (
+    <Box
+      sx={{
+        display: "flex",
+        flexWrap: { xs: "wrap", sm: "wrap", md: "nowrap" },
+        gap: 0.5,
+        justifyContent: { xs: "center" , sm: "center", md: "space-evenly"},
+        alignItems: "center"
+      }}
+      className="carrouselCards"
+    >
+      {renderCards(projectType)}
+    </Box>
+  );
+
   return (
-    <div className="cardMainContainer">
+    <Box className="cardMainContainer">
       <h2 className="cardElement">Backend</h2>
-      <div className="carrouselCards">{renderCards(backend)}</div>
+      {caja(backend)}
       <h2 className="cardElement">Frontend</h2>
-      <div className="carrouselCards">{renderCards(frontend)}</div>
-      <h2 className="cardElement">Varios</h2>
-      <div className="carrouselCards">{renderCards(other)}</div>
-    </div>
+      {caja(frontend)}
+      <h2 className="cardElement">Otros</h2>
+      {caja(other)}
+    </Box>
   );
 };

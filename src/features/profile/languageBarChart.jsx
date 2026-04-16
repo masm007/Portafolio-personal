@@ -1,6 +1,6 @@
 import React from "react";
 import { BarChart } from "@mui/x-charts";
-import { BarPlot } from "@mui/x-charts/BarChart";
+import Box from "@mui/material/Box";
 
 export const LanguageBarChart = ({ count }) => {
   const colors = [
@@ -24,23 +24,40 @@ export const LanguageBarChart = ({ count }) => {
   const data = Object.values(counts);
 
   return (
-    <BarChart
-      sx={{ margin: "5px", overflow: "auto" }}
-      width={500}
-      height={300}
-      colors={colors}
-      series={[
-        {
-          data: data,
-          label: "Proyectos",
-        },
-      ]}
-      xAxis={[
-        {
-          scaleType: "band",
-          data: labels,
-        },
-      ]}
-    />
+    <Box
+      sx={{
+        display: "flex",
+        justifyContent: "center",
+        width: "100%",
+      }}
+    >
+      <Box
+        sx={{
+          width: {
+            xs: "90%",
+            sm: "80%",
+            md: "60%",
+          },
+        }}
+      >
+        <BarChart
+          width={undefined}
+          height={300}
+          colors={colors}
+          series={[
+            {
+              data: data,
+              label: "Proyectos",
+            },
+          ]}
+          xAxis={[
+            {
+              scaleType: "band",
+              data: labels,
+            },
+          ]}
+        />
+      </Box>
+    </Box>
   );
 };
