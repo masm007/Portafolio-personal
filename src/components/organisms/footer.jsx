@@ -1,12 +1,14 @@
 import React from "react";
 import IconButton from "@mui/material/IconButton";
+import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
 import { LinkedIn, GitHub, Email, WhatsApp, Phone } from "@mui/icons-material";
 import "../../assets/styles/styles.css"
 
 export const Footer = () => {
   return (
     <footer className="Footer">
-      <div className="footerContent">
+      <Box className="footerContent">
         <IconButton
           sx={{
             "&:hover": {
@@ -71,10 +73,10 @@ export const Footer = () => {
         >
           <WhatsApp />
         </IconButton>
-      </div>
+      </Box>
 
-      <div className="footerContent">
-        <p className="footerElement">Marco Antonio Salazar Mejia</p>
+      <Box className="footerContent">
+        <Typography variant="body1" className="footerElement">Marco Antonio Salazar Mejia</Typography>
         <IconButton
           className="footerElement"
           sx={{
@@ -83,10 +85,10 @@ export const Footer = () => {
         >
           <Phone />
         </IconButton>
-        <p className="footerElement" style={{ display: "inline-block" }}>
+        <Typography variant="body1" className="footerElement" style={{ display: "inline-block" }}>
           0984183500
-        </p>
-      </div>
+        </Typography>
+      </Box>
     </footer>
   );
 };

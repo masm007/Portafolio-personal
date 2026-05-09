@@ -8,8 +8,8 @@ import {
 import { MainLayout } from "./layout/mainLayout.jsx";
 
 // Vistas
-import { Projects } from "./pages/projects.jsx";
 import { Information } from "./pages/information.jsx";
+import { FeaturedProjects } from "./pages/featuredProjects.jsx";
 
 function App() {
   return (
@@ -18,7 +18,7 @@ function App() {
           {/* rutas publicas */}
           <Route path="/" element={<MainLayout />}>
             <Route index element={<Information />}/>
-            <Route path="projects" element={<Projects />}/>
+            <Route path="projects" element={<FeaturedProjects />}/>
           </Route>
         </Routes>
     </BrowserRouter>

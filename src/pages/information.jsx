@@ -6,7 +6,9 @@ import { useOutletContext } from "react-router-dom";
 import { LanguageChip } from "../features/profile/languageChip.jsx";
 import { LanguageBarChart } from "../features/profile/languageBarChart.jsx";
 import { Card, CardContent, CardMedia } from "@mui/material";
-import fotoCv from "../assets/images/fotoCv.png";
+import Typography from "@mui/material/Typography";
+import "../assets/styles/styles.css";
+import fotoCv from "../assets/images/linkedin.jpg";
 
 export const Information = () => {
   const { proyectos } = useOutletContext();
@@ -20,7 +22,7 @@ export const Information = () => {
   }, [languages]);
 
   return (
-    <div className="infoContent" style={{overflowX: "auto"}}>
+    <div className="infoContent" style={{ overflowX: "auto" }}>
       <Card
         className="infoElement"
         sx={{
@@ -37,10 +39,10 @@ export const Information = () => {
           sx={{ width: 200, height: 200, margin: "auto", borderRadius: "50%" }}
         />
         <CardContent>
-          <p>
+          <Typography variant="body1" className="infoElement" sx={{ fontWeight: 500 }}>
             Hola mi nombre es Marco Salazar, actualmente soy estudiante del 9no
             semestre de la Universidad de Guayaquil en la carrera de Software
-          </p>
+          </Typography>
           <Button
             className="infoElement"
             variant="contained"
@@ -63,11 +65,25 @@ export const Information = () => {
           </Button>
         </CardContent>
       </Card>
-      <h3 className="infoElement">Lenguajes en los que he desarrollado</h3>
+      <Typography variant="h6" className="infoElement" sx={{ fontWeight: 700 }}>
+        Lenguajes en los que he desarrollado
+      </Typography>
       {languages.map((lang) => (
         <LanguageChip className="infoElement" key={lang} lang={lang} />
       ))}
-      <h3 className="infoElement">Cantidad de proyectos en cada lenguaje</h3>
+      <Typography variant="h6" className="infoElement" sx={{ fontWeight: 700 }}>
+        Cantidad de proyectos en cada lenguaje
+      </Typography>
+      <Typography
+        variant="body1"
+        className="infoElement"
+        sx={{
+          fontWeight: 500,
+        }}
+      >
+        Este grafico es generado de los proyectos públicos que existen en mi
+        github
+      </Typography>
       <LanguageBarChart
         className="infoElement"
         count={countLanguages}
