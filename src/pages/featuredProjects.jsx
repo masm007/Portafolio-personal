@@ -3,7 +3,7 @@ import { useOutletContext } from "react-router-dom";
 import { CardProject } from "../features/projects/cardProject.jsx";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-import {proyectos} from "../algo/Proyectos.js";
+import {proyectos} from "../data/Projects.js";
 import "../assets/styles/styles.css";
 
 export const FeaturedProjects = () => {

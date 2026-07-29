@@ -6,7 +6,7 @@ export const LanguageChip = ({ lang }) => {
   const languageColors = {
     JavaScript: "#f1e05a",
     Python: "#3572A5",
-    Java: "#b07219",
+    Java: "#ED8B00",
     "C#": "#178600",
     TypeScript: "#3178c6",
     HTML: "#e34c26",
