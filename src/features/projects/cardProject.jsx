@@ -42,7 +42,7 @@ export const CardProject = ({ proyecto }) => {
         label={tec}
         sx={{
           boxShadow: "4px 2px 2px #012619",
-          margin: "5px",
+          margin: "4px",
           backgroundColor: "#4EA664",
           color: "white",
           "& .MuiChip-icon": {
@@ -59,12 +59,10 @@ export const CardProject = ({ proyecto }) => {
         sx={{
           flex: "1 0 auto",
           minHeight: 500,
-          minWidth: 280,
-          maxWidth: 400,
-          width: "80vw",
-          //backgroundColor: "#A9D9C2",
-          backgroundColor: "#f4ede4",
-          boxShadow: "2px 1px 1px black",
+          maxWidth: { xs: "70vw", md: "40vw", lg: "26vw" },
+          borderRadius: 1,
+          border: "1px solid black",
+          boxShadow: "1px 1px 1px black",
         }}
       >
         <CardHeader
@@ -109,7 +107,7 @@ export const CardProject = ({ proyecto }) => {
             alt={proyecto.name}
           />
         )}
-        <CardContent>
+        <CardContent sx={{display: "flex", flexDirection: "column", gap: 1}}>
           {/* 20px - 14px */}
           <Typography
             variant="body1"
@@ -129,6 +127,14 @@ export const CardProject = ({ proyecto }) => {
           >
             {proyecto.framework}
           </Typography>
+          <Typography
+            variant="body2"
+            sx={{
+              color: "text.secondary",
+            }}
+          >
+            {proyecto.description}
+          </Typography>
           <Box
             sx={{
               display: "flex",
@@ -141,14 +147,6 @@ export const CardProject = ({ proyecto }) => {
           >
             {createChips(proyecto.technologies)}
           </Box>
-          <Typography
-            variant="body2"
-            sx={{
-              color: "text.secondary",
-            }}
-          >
-            {proyecto.description}
-          </Typography>
         </CardContent>
         <CardActions disableSpacing>
           <Tooltip title="Ver en GitHub">

@@ -76,7 +76,7 @@ export const Information = () => {
         sx={{
           maxWidth: {
             sm: "80vw",
-            md: "60vw"
+            md: "60vw",
           },
           margin: "10px auto",
           textAlign: "center",
@@ -181,7 +181,7 @@ export const Information = () => {
         }}
       >
         Este grafico es generado de los proyectos públicos que existen en mi
-        github
+        cuenta de github
       </Typography>
       <LanguageBarChart
         className="infoElement"

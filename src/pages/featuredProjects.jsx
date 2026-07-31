@@ -14,10 +14,10 @@ export const FeaturedProjects = () => {
     <Box
       sx={{
         display: "flex",
-        flexWrap: { xs: "wrap", sm: "wrap", md: "nowrap" },
+        flexWrap: "wrap",
         gap: 0.5,
-        justifyContent: { xs: "center", sm: "center", md: "space-evenly" },
-        alignItems: "center",
+        justifyContent: { xs: "center", sm: "center", md: "space-around" },
+        alignItems: "flex-start",
       }}
       className="carrouselCards"
     >
