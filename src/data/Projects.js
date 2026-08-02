@@ -1,37 +1,12 @@
-/*
-Estructura
-    id: 1,
-    // Información principal
-    nombre: "",
-    subtitle: "",
-    description: "",
-    fecha: "",
-    // Multimedia
-    imagen: "",
-    galeria: [],
-    urlYt: "",
-    demoLink: "",
-    // Tecnologías
-    tecnologias: [],
-    lenguaje: "",
-    framework: "",
-    // Enlaces
-    gitLink: "",
-    documentacion: "",
-    // Estado del proyecto
-    estado: "", // "Completado", "En desarrollo", "Pausado"
-    // Características
-    features: [],
-    // Rol
-    rol: "", // "Frontend", "Backend", "Fullstack"
-    // Equipo
-    modalidad: "", // "Individual" o "Equipo"
-    // Duración
-    duracion: "",
-    // Extras
-    categoria: "",
-    tags: [],
-*/
+import {
+  restaurantGallery,
+  ceragenGallery,
+  ceragenBackendGallery,
+  ceragen2Gallery,
+  tiendaVirtualGallery,
+  tiendaVirtualBackendGallery,
+} from "../data/Galleries";
+
 export const createProject = ({
   id,
   name,
@@ -42,7 +17,7 @@ export const createProject = ({
   projectType = "Academic",
   category = "Web",
 
-  image = "",
+  //image = "",
   gallery = [],
   youtubeUrl = "",
   demoUrl = "",
@@ -74,7 +49,7 @@ export const createProject = ({
   projectType,
   category,
 
-  image,
+  //image,
   gallery,
   youtubeUrl,
   demoUrl,
@@ -99,7 +74,7 @@ export const createProject = ({
 });
 
 export const proyectos = [
-    createProject({
+  createProject({
     id: 1,
     name: "Tienda Virtual (Backend)",
     subtitle: "Sistema de ventas",
@@ -119,6 +94,7 @@ export const proyectos = [
     language: "C#",
     framework: ".NET",
     githubUrl: "https://github.com/masm007/Sistema-de-tienda-virtual-Backend",
+    gallery: tiendaVirtualBackendGallery,
     status: "En desarrollo",
     role: "Backend",
     participation: "Individual",
@@ -138,6 +114,7 @@ export const proyectos = [
     language: "TypeScript",
     framework: "React",
     githubUrl: "https://github.com/masm007/Sistema-de-tienda-virtual-Frontend",
+    gallery: tiendaVirtualGallery,
     status: "En desarrollo",
     role: "Frontend",
     participation: "Individual",
@@ -162,6 +139,7 @@ export const proyectos = [
     language: "Java",
     framework: "Spring Boot",
     githubUrl: "https://github.com/masm007/Gestion-de-Restaurant",
+    gallery: restaurantGallery,
     role: "Fullstack",
     participation: "Equipo",
     duration: "1 mes",
@@ -181,6 +159,7 @@ export const proyectos = [
     framework: "Flask",
     githubUrl:
       "https://github.com/masm007/Modulo-de-Facturacion-Sistema-Medico-Backend",
+    gallery: ceragenBackendGallery,
     role: "Backend",
     participation: "Equipo",
     duration: "2 meses",
@@ -200,6 +179,7 @@ export const proyectos = [
     framework: "React",
     githubUrl:
       "https://github.com/masm007/Modulo-de-Facturacion-Sistema-Medico-Frontend",
+    gallery: ceragenGallery,
     role: "Frontend",
     participation: "Equipo",
     duration: "2 meses",
@@ -218,6 +198,7 @@ export const proyectos = [
     language: "Java",
     framework: "JavaFX",
     githubUrl: "https://github.com/masm007/Modulo-de-Facturacion-Ceragen_2",
+    gallery: ceragen2Gallery,
     status: "Completed",
     role: "Fullstack",
     participation: "Equipo",
@@ -225,6 +206,4 @@ export const proyectos = [
     category: "Desktop",
     tags: ["JavaFX", "MVC", "Facturación", "Desktop"],
   }),
-
-
 ];

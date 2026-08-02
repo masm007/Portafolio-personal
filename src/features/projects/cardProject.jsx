@@ -103,11 +103,11 @@ export const CardProject = ({ proyecto }) => {
           <CardMedia
             component="img"
             height="220"
-            image={defo}
+            image={proyecto.gallery?.[0] ?? defo}
             alt={proyecto.name}
           />
         )}
-        <CardContent sx={{display: "flex", flexDirection: "column", gap: 1}}>
+        <CardContent sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
           {/* 20px - 14px */}
           <Typography
             variant="body1"
