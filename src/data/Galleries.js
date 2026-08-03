@@ -25,6 +25,15 @@ import cartTv from "../assets/images/projects/TiendaVirtual (Frontend)/cart.png"
 
 import backendTv from "../assets/images/projects/TiendaVirtual (Backend)/backend.png";
 
+//alquiler de yates
+import loginAy from "../assets/images/projects/AlquilerYates/login.png";
+import menuAy from "../assets/images/projects/AlquilerYates/menu.png";
+import submenuAy from "../assets/images/projects/AlquilerYates/submenu_clientes.png";
+import crearAy from "../assets/images/projects/AlquilerYates/crear.png";
+import listadoAy from "../assets/images/projects/AlquilerYates/listado.png";
+import editarAy from "../assets/images/projects/AlquilerYates/editar.png";
+import eliminarAy from "../assets/images/projects/AlquilerYates/eliminar.png";
+
 export const restaurantGallery = [menuRest, registro];
 export const ceragenGallery = [menuCg, crearCg, devCg, facCg, listadoCg];
 export const ceragenBackendGallery = [backendCg];
@@ -37,3 +46,12 @@ export const ceragen2Gallery = [
 ];
 export const tiendaVirtualGallery = [loginTv, menuTv, cartTv];
 export const tiendaVirtualBackendGallery = [backendTv];
+export const alquilerYatesGallery = [
+  menuAy,
+  loginAy,
+  submenuAy,
+  crearAy,
+  listadoAy,
+  editarAy,
+  eliminarAy,
+];

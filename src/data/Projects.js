@@ -5,6 +5,7 @@ import {
   ceragen2Gallery,
   tiendaVirtualGallery,
   tiendaVirtualBackendGallery,
+  alquilerYatesGallery,
 } from "../data/Galleries";
 
 export const createProject = ({
@@ -14,7 +15,7 @@ export const createProject = ({
   description = "",
   date = "",
 
-  projectType = "Academic",
+  projectType = "Academico",
   category = "Web",
 
   //image = "",
@@ -199,11 +200,31 @@ export const proyectos = [
     framework: "JavaFX",
     githubUrl: "https://github.com/masm007/Modulo-de-Facturacion-Ceragen_2",
     gallery: ceragen2Gallery,
-    status: "Completed",
+    status: "Completado",
     role: "Fullstack",
     participation: "Equipo",
     duration: "1 mes",
     category: "Desktop",
     tags: ["JavaFX", "MVC", "Facturación", "Desktop"],
+  }),
+
+  createProject({
+    id: 7,
+    name: "Sistema de Alquiler de Yates",
+    subtitle: "Aplicación móvil de gestión",
+    date: "Febrero 7, 2026",
+    description:
+      "Aplicación móvil desarrollada con Flutter para la gestión de alquiler de yates. Participé en el desarrollo del módulo de clientes.",
+    technologies: ["Dart", "Flutter", "Android", "Material Design 3"],
+    language: "Dart",
+    framework: "Flutter",
+    githubUrl: "https://github.com/masm007/Modulo-de-Clientes-Sistema-de-Yates",
+    gallery: alquilerYatesGallery,
+    status: "Completado",
+    role: "Mobile",
+    participation: "Equipo",
+    duration: "2 semanas",
+    category: "Mobile",
+    tags: ["Flutter", "Gestión", "Clientes", "Mobile"],
   }),
 ];
