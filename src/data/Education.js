@@ -44,7 +44,16 @@ export const courses = [
   }),
   createEducation({
     id: 3,
-    name: "Proramación Backend en .NET",
+    name: "Google AI Essentials",
+    institution: "Google / Coursera",
+    level: "5 de 5 cursos",
+    initialDate: "2026",
+    certificateUrl:
+      "https://coursera.org/share/acb3e7d3262f7044eac52c82b8b0eaa4",
+  }),
+  createEducation({
+    id: 4,
+    name: "Programación Backend en .NET",
     institution: "MetalCode",
     level: "1 curso",
     initialDate: "2026",
@@ -52,7 +61,7 @@ export const courses = [
       "https://drive.google.com/file/d/18yN4rkPM88vxq-McHExSR5wm6PlGWeCO/view?usp=sharing",
   }),
   createEducation({
-    id: 4,
+    id: 5,
     name: "Fundamentos de .NET",
     institution: "MetalCode",
     level: "1 curso",
@@ -61,9 +70,9 @@ export const courses = [
       "https://drive.google.com/file/d/1vWA7aLLI7whQfZ_Pqbf5yx8fewtRCdRS/view?usp=sharing",
   }),
   createEducation({
-    id: 5,
+    id: 6,
     name: "Introducción a Python para Ciencia de Datos",
-    institution: "EPICO/Universidad Católica Santiago de Guayaquil",
+    institution: "ÉPICO/Universidad Católica Santiago de Guayaquil",
     level: "1 curso de 20 horas",
     initialDate: "2024",
     certificateUrl:

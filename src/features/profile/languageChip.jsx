@@ -8,12 +8,13 @@ export const LanguageChip = ({ lang }) => {
     Python: "#3572A5",
     Java: "#ED8B00",
     "C#": "#178600",
+    Dart: "#0175C2",
     TypeScript: "#3178c6",
     HTML: "#e34c26",
     CSS: "#563d7c",
     Shell: "#89e051",
   };
-  const color = languageColors[lang] || "#888";
+  const color = languageColors[lang] || "#111";
   return (
     <Chip
       icon={<Language sx={{ color: "white" }} />}
