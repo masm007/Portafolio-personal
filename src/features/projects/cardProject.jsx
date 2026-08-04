@@ -102,9 +102,14 @@ export const CardProject = ({ proyecto }) => {
         ) : (
           <CardMedia
             component="img"
-            height="220"
             image={proyecto.gallery?.[0] ?? defo}
             alt={proyecto.name}
+            sx={{
+              width: "100%",
+              maxHeight: 220,
+              objectFit: "contain",
+              backgroundColor: "#fafafa",
+            }}
           />
         )}
         <CardContent sx={{ display: "flex", flexDirection: "column", gap: 1 }}>

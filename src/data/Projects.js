@@ -215,7 +215,13 @@ export const proyectos = [
     date: "Febrero 7, 2026",
     description:
       "Aplicación móvil desarrollada con Flutter para la gestión de alquiler de yates. Participé en el desarrollo del módulo de clientes.",
-    technologies: ["Dart", "Flutter", "Android", "Material Design 3"],
+    technologies: [
+      "Dart",
+      "Flutter",
+      "Android",
+      "Firebase",
+      "Material Design 3",
+    ],
     language: "Dart",
     framework: "Flutter",
     githubUrl: "https://github.com/masm007/Modulo-de-Clientes-Sistema-de-Yates",
@@ -225,6 +231,6 @@ export const proyectos = [
     participation: "Equipo",
     duration: "2 semanas",
     category: "Mobile",
-    tags: ["Flutter", "Gestión", "Clientes", "Mobile"],
+    tags: ["Flutter", "Firebase", "Gestión", "Clientes", "Mobile"],
   }),
 ];
