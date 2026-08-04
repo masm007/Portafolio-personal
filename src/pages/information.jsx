@@ -54,10 +54,6 @@ export const Information = () => {
     </Box>
   );
 
-  useEffect(() => {
-    console.log(languages);
-  }, [languages]);
-
   return (
     <Box
       className="infoContent"
@@ -113,7 +109,7 @@ export const Information = () => {
                 transform: "scale(1.1)",
               },
             }}
-            href="https://drive.google.com/file/d/10-gM0A8Qjwu2HXAJOOgZ7HALJ2hL-lV7/view?usp=sharing"
+            href="https://drive.google.com/file/d/1GO7KX9XZ21XtrW3K101ug012b2Ua6ZsZ/view?usp=sharing"
             target="_blank"
             startIcon={<ContactPage />}
           >
