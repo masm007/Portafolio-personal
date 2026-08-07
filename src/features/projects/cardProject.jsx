@@ -1,7 +1,13 @@
 import React from "react";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
-import { CardActions, CardHeader, CardMedia, Tooltip } from "@mui/material";
+import {
+  CardActionArea,
+  CardActions,
+  CardHeader,
+  CardMedia,
+  Tooltip,
+} from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
@@ -13,10 +19,31 @@ import { GitHub } from "@mui/icons-material";
 import Chip from "@mui/material/Chip";
 import BuildIcon from "@mui/icons-material/Build";
 import Collapse from "@mui/material/Collapse";
+import { useNavigate } from "react-router-dom";
 import "../../assets/styles/styles.css";
+
+export const createChips = (technologies) => {
+  return technologies.map((tec) => (
+    <Chip
+      key={tec}
+      icon={<BuildIcon sx={{ fontSize: "medium" }} />}
+      label={tec}
+      sx={{
+        boxShadow: "4px 2px 2px #012619",
+        margin: "4px",
+        backgroundColor: "#4EA664",
+        color: "white",
+        "& .MuiChip-icon": {
+          color: "white",
+        },
+      }}
+    />
+  ));
+};
 
 export const CardProject = ({ proyecto }) => {
   const [expanded, setExpanded] = React.useState(false);
+  const navigate = useNavigate();
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
@@ -34,24 +61,6 @@ export const CardProject = ({ proyecto }) => {
     transform: !expand ? "rotate(0deg)" : "rotate(180deg)",
   }));
 
-  const createChips = (technologies) => {
-    return technologies.map((tec) => (
-      <Chip
-        key={tec}
-        icon={<BuildIcon sx={{ fontSize: "medium" }} />}
-        label={tec}
-        sx={{
-          boxShadow: "4px 2px 2px #012619",
-          margin: "4px",
-          backgroundColor: "#4EA664",
-          color: "white",
-          "& .MuiChip-icon": {
-            color: "white",
-          },
-        }}
-      />
-    ));
-  };
   return (
     <>
       <Card
@@ -65,94 +74,98 @@ export const CardProject = ({ proyecto }) => {
           boxShadow: "1px 1px 1px black",
         }}
       >
-        <CardHeader
-          //avatar={<Avatar src={defo}></Avatar>}
-          avatar={<Avatar sx={{ bgcolor: "#4EA664" }}>{proyecto.id}</Avatar>}
-          title={
-            <Typography
-              variant="h6"
+        <CardActionArea onClick={() => navigate(`/projects/${proyecto.slug}`)}>
+          <CardHeader
+            //avatar={<Avatar src={defo}></Avatar>}
+            avatar={<Avatar sx={{ bgcolor: "#4EA664" }}>{proyecto.id}</Avatar>}
+            title={
+              <Typography
+                variant="h6"
+                sx={{
+                  textAlign: "left",
+                  fontWeight: 700,
+                }}
+              >
+                {proyecto.name}
+              </Typography>
+            }
+            subheader={
+              <Typography
+                variant="subtitle2"
+                sx={{
+                  textAlign: "left",
+                }}
+              >
+                {"Publicado: " + (proyecto.date ? proyecto.date : "Sin fecha")}
+              </Typography>
+            }
+          />
+          {proyecto.youtubeId ? (
+            <CardMedia
+              component="iframe"
+              height="220"
+              src={`https://www.youtube.com/embed/${proyecto.youtubeId}`}
+              title={proyecto.name}
+              allowFullScreen
+              sx={{ border: "none" }}
+            />
+          ) : (
+            <CardMedia
+              component="img"
+              image={proyecto.gallery?.[0] ?? defo}
+              alt={proyecto.name}
               sx={{
-                textAlign: "left",
-                fontWeight: 700,
+                width: "100%",
+                maxHeight: 220,
+                objectFit: "contain",
+                backgroundColor: "#fafafa",
+              }}
+            />
+          )}
+          <CardContent
+            sx={{ display: "flex", flexDirection: "column", gap: 1 }}
+          >
+            {/* 20px - 14px */}
+            <Typography
+              variant="body1"
+              sx={{
+                color: "text.secondary",
+                fontWeight: "bold",
               }}
             >
-              {proyecto.name}
+              {proyecto.language}
             </Typography>
-          }
-          subheader={
             <Typography
-              variant="subtitle2"
+              variant="body1"
               sx={{
-                textAlign: "left",
+                color: "text.secondary",
+                fontWeight: "bold",
               }}
             >
-              {"Publicado: " + (proyecto.date ? proyecto.date : "Sin fecha")}
+              {proyecto.framework}
             </Typography>
-          }
-        />
-        {proyecto.youtubeId ? (
-          <CardMedia
-            component="iframe"
-            height="220"
-            src={`https://www.youtube.com/embed/${proyecto.youtubeId}`}
-            title={proyecto.name}
-            allowFullScreen
-            sx={{ border: "none" }}
-          />
-        ) : (
-          <CardMedia
-            component="img"
-            image={proyecto.gallery?.[0] ?? defo}
-            alt={proyecto.name}
-            sx={{
-              width: "100%",
-              maxHeight: 220,
-              objectFit: "contain",
-              backgroundColor: "#fafafa",
-            }}
-          />
-        )}
-        <CardContent sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
-          {/* 20px - 14px */}
-          <Typography
-            variant="body1"
-            sx={{
-              color: "text.secondary",
-              fontWeight: "bold",
-            }}
-          >
-            {proyecto.language}
-          </Typography>
-          <Typography
-            variant="body1"
-            sx={{
-              color: "text.secondary",
-              fontWeight: "bold",
-            }}
-          >
-            {proyecto.framework}
-          </Typography>
-          <Typography
-            variant="body2"
-            sx={{
-              color: "text.secondary",
-            }}
-          >
-            {proyecto.description}
-          </Typography>
-          <Box
-            sx={{
-              display: "flex",
-              justifyContent: "center",
-              flexWrap: "wrap",
-              gap: 1,
-              marginTop: 1,
-              marginBottom: 1,
-            }}
-          >
-            {createChips(proyecto.technologies)}
-          </Box>
-        </CardContent>
+            <Typography
+              variant="body2"
+              sx={{
+                color: "text.secondary",
+              }}
+            >
+              {proyecto.description}
+            </Typography>
+            <Box
+              sx={{
+                display: "flex",
+                justifyContent: "center",
+                flexWrap: "wrap",
+                gap: 1,
+                marginTop: 1,
+                marginBottom: 1,
+              }}
+            >
+              {createChips(proyecto.technologies)}
+            </Box>
+          </CardContent>
+        </CardActionArea>
         <CardActions disableSpacing>
           <Tooltip title="Ver en GitHub">
             <IconButton
@@ -172,45 +185,7 @@ export const CardProject = ({ proyecto }) => {
               <GitHub />
             </IconButton>
           </Tooltip>
-          <ExpandMore
-            expand={expanded}
-            onClick={handleExpandClick}
-            aria-expanded={expanded}
-            aria-label="Mostrar más"
-          >
-            <ExpandMoreIcon />
-          </ExpandMore>
         </CardActions>
-        <Collapse in={expanded} timeout="auto" unmountOnExit>
-          <CardContent>
-            <Typography variant="body2" sx={{ color: "text.secondary" }}>
-              <Box component="span" sx={{ fontWeight: "bold" }}>
-                Estado:
-              </Box>{" "}
-              {proyecto.status}
-            </Typography>
-            <Typography variant="body2" sx={{ color: "text.secondary" }}>
-              <Box component="span" sx={{ fontWeight: "bold" }}>
-                Desarrollado en:
-              </Box>{" "}
-              {proyecto.participation}
-            </Typography>
-
-            <Typography variant="body2" sx={{ color: "text.secondary" }}>
-              <Box component="span" sx={{ fontWeight: "bold" }}>
-                Duración del proyecto:
-              </Box>{" "}
-              {proyecto.duration}
-            </Typography>
-
-            <Typography variant="body2" sx={{ color: "text.secondary" }}>
-              <Box component="span" sx={{ fontWeight: "bold" }}>
-                Categoría:
-              </Box>{" "}
-              {proyecto.category}
-            </Typography>
-          </CardContent>
-        </Collapse>
       </Card>
     </>
   );
