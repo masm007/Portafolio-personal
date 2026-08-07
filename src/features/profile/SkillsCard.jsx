@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Typography, Chip } from "@mui/material";
-import { LanguageChip } from "../../features/profile/languageChip";
+import { LanguageChip } from "./LanguageChip";
 
 export const SkillsCard = ({ name }) => {
   return (

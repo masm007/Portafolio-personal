@@ -1,9 +1,9 @@
 import React from "react";
 import { useOutletContext } from "react-router-dom";
-import { CardProject } from "../features/projects/cardProject.jsx";
+import { CardProject } from "../features/projects/CardProject.jsx";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-import {proyectos} from "../data/Projects.js";
+import {proyectos} from "../data/projects.js";
 import "../assets/styles/styles.css";
 
 export const FeaturedProjects = () => {

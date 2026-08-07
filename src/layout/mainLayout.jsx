@@ -3,9 +3,9 @@ import { useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
 
 // Componentes
-import { Footer } from "../components/organisms/footer.jsx";
-import { Navbar } from "../components/organisms/navbar.jsx";
-import { Header } from "../components/organisms/header.jsx";
+import { Footer } from "../components/organisms/Footer.jsx";
+import { Navbar } from "../components/organisms/Navbar.jsx";
+import { Header } from "../components/organisms/Header.jsx";
 
 export const MainLayout = () => {
   const [headerTitle, setHeaderTitle] = useState("Marco Salazar");

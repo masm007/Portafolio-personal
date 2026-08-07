@@ -6,7 +6,7 @@ import {
   tiendaVirtualGallery,
   tiendaVirtualBackendGallery,
   alquilerYatesGallery,
-} from "../data/Galleries";
+} from "./galleries";
 
 export const createProject = ({
   id,
