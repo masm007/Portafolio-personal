@@ -8,7 +8,7 @@ import { Navbar } from "../components/organisms/navbar.jsx";
 import { Header } from "../components/organisms/header.jsx";
 
 export const MainLayout = () => {
-  const [headerTitle, setHeaderTitle] = useState("Portafolio");
+  const [headerTitle, setHeaderTitle] = useState("Marco Salazar");
   const [proyectos, setProyectos] = useState([]);
 
   const datos = async () => {

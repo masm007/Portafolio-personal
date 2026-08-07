@@ -11,6 +11,7 @@ import {
 export const createProject = ({
   id,
   name,
+  slug,
   subtitle = "",
   description = "",
   date = "",
@@ -43,6 +44,7 @@ export const createProject = ({
 }) => ({
   id,
   name,
+  slug: createSlug(name),
   subtitle,
   description,
   date,
@@ -73,6 +75,15 @@ export const createProject = ({
   duration,
   contribution,
 });
+
+const createSlug = (name) => {
+  return name
+    .toLowerCase()
+    .normalize("NFD") //separa tildes de vocales
+    .replace(/[\u0300-\u036f]/g, "") //elimina tildes
+    .replace(/[()]/g, "") //elimina paréntesis
+    .replace(/\s+/g, "-");
+};
 
 export const proyectos = [
   createProject({
@@ -127,6 +138,7 @@ export const proyectos = [
   createProject({
     id: 3,
     name: "Gestión de Restaurant",
+    subtitle: "Sistema de gestión",
     date: "Diciembre 12, 2024",
     description:
       "Participé en el desarrollo de los módulos de gestión de menús y pedidos utilizando Spring Boot y Thymeleaf.",
