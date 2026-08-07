@@ -5,12 +5,12 @@ import {
 } from "react-router-dom";
 
 //Layout
-import { MainLayout } from "./layout/mainLayout.jsx";
+import { MainLayout } from "./layout/MainLayout.jsx";
 
 // Vistas
-import { Information } from "./pages/information.jsx";
-import { FeaturedProjects } from "./pages/featuredProjects.jsx";
-import { Project } from "./features/projects/project.jsx";
+import { Information } from "./pages/Information.jsx";
+import { FeaturedProjects } from "./pages/FeaturedProjects.jsx";
+import { Project } from "./features/projects/Project.jsx";
 
 function App() {
   return (

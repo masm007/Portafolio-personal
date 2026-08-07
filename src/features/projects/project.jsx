@@ -9,7 +9,7 @@ import "yet-another-react-lightbox/plugins/counter.css";
 import "yet-another-react-lightbox/styles.css";
 import { useParams } from "react-router-dom";
 import { proyectos } from "../../data/projects";
-import { createChips } from "./cardProject";
+import { createChips } from "./CardProject";
 
 export const Project = () => {
   const { projectSlug } = useParams();
@@ -17,11 +17,12 @@ export const Project = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const project = proyectos.find((p) => p.slug === projectSlug);
-  const cols = Math.min(project.gallery.length, 3);
 
   if (!project) {
     return <Typography>Proyecto no encontrado</Typography>;
   }
+
+  const cols = Math.min(project.gallery.length, 3);
 
   return (
     <Box

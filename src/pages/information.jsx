@@ -3,22 +3,22 @@ import { useEffect } from "react";
 import { ContactPage } from "@mui/icons-material";
 import { Button } from "@mui/material";
 import { useOutletContext } from "react-router-dom";
-import { LanguageChip } from "../features/profile/languageChip.jsx";
-import { LanguageBarChart } from "../features/profile/languageBarChart.jsx";
+import { LanguageChip } from "../features/profile/LanguageChip.jsx";
+import { LanguageBarChart } from "../features/profile/LanguageBarChart.jsx";
 import { Card, CardContent, CardMedia } from "@mui/material";
 import Typography from "@mui/material/Typography";
 import "../assets/styles/styles.css";
 import fotoCv from "../assets/images/linkedin.jpg";
 import { EducationCard } from "../features/profile/EducationCard.jsx";
 import Box from "@mui/material/Box";
-import { education, courses } from "../data/Education.js";
+import { education, courses } from "../data/education.js";
 import {
   BackendTechnologies,
   FrontendTechnologies,
   DatabaseTechnologies,
   ArchitectureTechnologies,
   DevTools,
-} from "../data/Technologies.js";
+} from "../data/technologies.js";
 import { SkillsCard } from "../features/profile/SkillsCard.jsx";
 
 export const Information = () => {
