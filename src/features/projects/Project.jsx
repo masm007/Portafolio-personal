@@ -1,5 +1,12 @@
 import React, { useState } from "react";
-import { Box, Typography, ImageList, ImageListItem } from "@mui/material";
+import {
+  Box,
+  Typography,
+  ImageList,
+  ImageListItem,
+  Button,
+} from "@mui/material";
+import { GitHub } from "@mui/icons-material";
 import Lightbox from "yet-another-react-lightbox";
 import Zoom from "yet-another-react-lightbox/plugins/zoom";
 import Counter from "yet-another-react-lightbox/plugins/counter";
@@ -7,7 +14,7 @@ import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
 import "yet-another-react-lightbox/plugins/thumbnails.css";
 import "yet-another-react-lightbox/plugins/counter.css";
 import "yet-another-react-lightbox/styles.css";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { proyectos } from "../../data/projects";
 import { createChips } from "./CardProject";
 
@@ -41,10 +48,10 @@ export const Project = () => {
         textAlign: "center",
       }}
     >
-      <Typography variant="h2" fontWeight={400}>
+      <Typography variant="h3" fontWeight={700}>
         {project.name}
       </Typography>
-      <Typography variant="subtitle1" fontWeight={500}>
+      <Typography variant="h4" fontWeight={400}>
         {project.subtitle}
       </Typography>
       <Typography variant="subtitle1">{project.date}</Typography>
@@ -90,6 +97,16 @@ export const Project = () => {
         </Box>{" "}
         {project.category}
       </Typography>
+      <Button
+        component="a"
+        href={project.githubUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        startIcon={<GitHub />}
+        sx={{color: "#8250DF"}}
+      >
+        Visitar repositorio en GitHub
+      </Button>
 
       <Lightbox
         open={open}
