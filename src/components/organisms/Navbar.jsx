@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import "../../assets/styles/styles.css"
+import { Box, Typography } from "@mui/material";
+import "../../assets/styles/styles.css";
 
 // Style function for active links
 const navLinkStyles = ({ isActive }) => ({
@@ -14,18 +15,34 @@ const navLinkStyles = ({ isActive }) => ({
 export const Navbar = () => {
   return (
     <nav className="NavBar">
-      <NavLink
-        to="/"
-        sx={{ border: "5px", BorderColor: "#012619" }}
-        className="navbarElement"
-        style={navLinkStyles}
-        end
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          gap: 4,
+        }}
       >
-        Informacion
-      </NavLink>
-      <NavLink to="/projects" className="navbarElement" style={navLinkStyles}>
-        Proyectos
-      </NavLink>
+        <Box sx={{ display: "flex" }}>
+          {" "}
+          <NavLink
+            to="/"
+            sx={{ border: "5px", BorderColor: "#012619" }}
+            className="navbarElement"
+            style={navLinkStyles}
+            end
+          >
+            Informacion
+          </NavLink>
+          <NavLink
+            to="/projects"
+            className="navbarElement"
+            style={navLinkStyles}
+          >
+            Proyectos
+          </NavLink>
+        </Box>
+      </Box>
     </nav>
   );
 };
